@@ -1,8 +1,14 @@
+import { NgModule, ApplicationRef } from '@angular/core';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+
 
 // Import containers
 import {
@@ -15,8 +21,14 @@ const APP_CONTAINERS = [
   SimpleLayoutComponent
 ]
 
+const APP_PROVIDERS = [
+  AppService
+  
+];
+
 // Import components
 import {
+
   AppAsideComponent,
   AppBreadcrumbsComponent,
   AppFooterComponent,
@@ -71,6 +83,10 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    HttpModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     ChartsModule
   ],
   declarations: [
@@ -79,10 +95,13 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    APP_PROVIDERS
+    
+  ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule { 
+constructor(public appState: AppService) {
+  }
+}
