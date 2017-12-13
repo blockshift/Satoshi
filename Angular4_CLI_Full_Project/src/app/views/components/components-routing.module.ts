@@ -7,6 +7,11 @@ import { FormsComponent } from './forms.component';
 
 import { TablesComponent } from './tables.component';
 
+import { BlockchainsearchComponent } from './blockchainsearch.component';
+
+import { EnrollmentComponent } from './enrollment.component';
+
+import { TransactionComponent } from './transaction.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,9 +31,33 @@ const routes: Routes = [
         path: 'tables',
         component: TablesComponent,
         data: {
-          title: 'Tables'
+          title: 'Degree Enroll'
         }
-      }
+      },
+       {
+        path: 'blockchainsearch',
+        component: BlockchainsearchComponent,
+        data: {
+          title: 'Blockchain Search'
+        }
+       }
+        ,
+        
+        {
+        path: 'transaction',
+        component: TransactionComponent,
+        data: {
+          title: 'Transaction Search'
+        }
+},
+       {
+        path: 'enrollment',
+        component: EnrollmentComponent,
+        data: {
+          title: 'Enrollment Search'
+        }
+}
+
     ]
   }
 ];

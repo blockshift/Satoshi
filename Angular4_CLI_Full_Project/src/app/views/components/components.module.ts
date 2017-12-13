@@ -6,8 +6,9 @@ import {  FormsModule,ReactiveFormsModule} from '@angular/forms';
 // Forms Component
 import { FormsComponent } from './forms.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-
-
+import { BlockchainsearchComponent } from './blockchainsearch.component';
+import { EnrollmentComponent } from './enrollment.component';
+import { TransactionComponent } from './transaction.component';
 // Modal Component
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -29,7 +30,10 @@ import { ComponentsRoutingModule } from './components-routing.module';
   ],
   declarations: [
     FormsComponent,
-    TablesComponent
+    BlockchainsearchComponent,
+    TablesComponent,
+    TransactionComponent,
+    EnrollmentComponent
     
   ]
 })

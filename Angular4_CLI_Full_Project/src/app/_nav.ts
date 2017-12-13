@@ -2,114 +2,38 @@ export const navigation = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    icon: 'icon-speedometer'
   },
   {
-    title: true,
-    name: 'UI elements'
+    name: 'User Enroll',
+    url: '/components/forms',
+    icon: 'icon-puzzle'
   },
   {
-    name: 'Components',
-    url: '/components',
-    icon: 'icon-puzzle',
-    children: [
-      
-      {
-        name: 'Forms',
-        url: '/components/forms',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tables',
-        url: '/components/tables',
-        icon: 'icon-puzzle'
-      }
-    ]
+    name: 'DegreeEnroll',
+    url: '/components/tables',
+    icon: 'icon-star'
   },
+
   {
-    name: 'Icons',
-    url: '/icons',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Font Awesome',
-        url: '/icons/font-awesome',
-        icon: 'icon-star',
-        badge: {
-          variant: 'secondary',
-          text: '4.7'
-        }
-      },
-      {
-        name: 'Simple Line Icons',
-        url: '/icons/simple-line-icons',
-        icon: 'icon-star'
-      }
-    ]
+    name: 'Blockchain Search',
+    url: '/components/blockchainsearch',
+    icon: 'icon-star'
   },
+
   {
-    name: 'Widgets',
-    url: '/widgets',
-    icon: 'icon-calculator',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    name: 'Transaction Search',
+    url: '/components/transaction',
+    icon: 'icon-star'
   },
+
+
   {
-    name: 'Charts',
-    url: '/charts',
-    icon: 'icon-pie-chart'
-  },
-  {
-    divider: true
-  },
-  {
-    title: true,
-    name: 'Extras',
-  },
-  {
-    name: 'Pages',
-    url: '/pages',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Login',
-        url: '/pages/login',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Register',
-        url: '/pages/register',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 404',
-        url: '/pages/404',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 500',
-        url: '/pages/500',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success'
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger'
-  }
+    name: 'Enrollment Search',
+    url: '/components/enrollment',
+    icon: 'icon-star'
+  }    
+
+    
+  
 ];

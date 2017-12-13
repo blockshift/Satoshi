@@ -27,19 +27,8 @@ export const routes: Routes = [
       {
         path: 'components',
         loadChildren: './views/components/components.module#ComponentsModule'
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
       }
+      
     ]
   },
   {

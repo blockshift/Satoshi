@@ -1,27 +1,24 @@
-<div class="animated fadeIn">
-  
-  <div class="row">
-    
-    
+<div class="row">
     <div class="col-md-12">
-      <div class="card">
+      
+         <div class="card">
         <div class="card-header">
-          <strong>User Enroll</strong> Form
+          <strong>Search By Transaction Id</strong> 
         </div>
         
           <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
             <div class="card-body">
             <div class="form-group row">
-              <label class="col-md-3 col-form-label" >Username</label>
+              
               <div class="col-md-9">
-                <input type="email" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter  UserName">
+                <input type="text" class="form-control" id="transactionid" [(ngModel)]="transactionid" name="transactionid" placeholder="Enter  transactionid">
                
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-3 col-form-label" >Organization Name</label>
+            
               <div class="col-md-9">
-                <input type="text"  class="form-control" id="org" [(ngModel)]="org" name="org" placeholder="Enter Organization Name">
+                <input type="text"  class="form-control" id="orgtoken" [(ngModel)]="orgtoken" name="orgtoken" placeholder="Enter Organization token">
                 
               </div>
             </div>
@@ -33,24 +30,24 @@
         </div>
       </form>
       </div>
-      
-    </div><!--/.col-->
-
-
+<!---/.column -->
   </div>
-<!--/.row-->
   
-  <div class="row">
+  <!--/.row-->
+  </div>
+ 
+
+
+
+
+
+<div class="row">
     <div class="col-md-12">
       
-<label class="col-md-3 col-form-label" >Organization Token</label>
+<label class="col-md-3 col-form-label" >Raw Data Of Block</label>
 <div #dataContainer></div>
 
     </div>
 
 
   </div>
-  
-  <!--/.row-->
-  
-</div>
