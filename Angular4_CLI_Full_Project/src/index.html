@@ -44,6 +44,19 @@
   <!-- Enable bootstrap 4 theme -->
   <script>window.__theme = 'bs4';</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://code.angularjs.org/tools/system.js"></script>
+
+<script>
+    System.config({
+        defaultJSExtensions: true, 
+        globalEvaluationScope: false,
+        map: {
+            'ng2-bs3-modal': 'node_modules/ng2-bs3-modal'
+        }
+    });
+</script>
   <!-- App Loading... -->
 </body>
 
