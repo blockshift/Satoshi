@@ -9,7 +9,12 @@ export class FormsComponent {
 @ViewChild('dataContainer') dataContainer: ElementRef;
   constructor(private exampleService: AppService) { }
 
+isCopied1: boolean = false;
 
+  orgn = [
+    {value: 'orga', viewValue :'Ned Software Department '},
+    // {value: 'orgb', viewValue :'orgB '},
+  ];
 @Input() name: any;
 @Input() org: any;
   onSubmit(form: any):void{

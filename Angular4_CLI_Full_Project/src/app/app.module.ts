@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import containers
 import {
@@ -92,6 +92,7 @@ import { BsModalModule } from 'ng2-bs3-modal';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    NoopAnimationsModule,
     ChartsModule
   ],
   declarations: [

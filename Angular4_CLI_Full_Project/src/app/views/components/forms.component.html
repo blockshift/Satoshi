@@ -21,7 +21,15 @@
             <div class="form-group row">
               <label class="col-md-3 col-form-label" >Organization Name</label>
               <div class="col-md-9">
-                <input type="text"  class="form-control" id="org" [(ngModel)]="org" name="org" placeholder="Enter Organization Name">
+              <!--  <input type="text"  class="form-control" id="org" [(ngModel)]="org" name="org" placeholder="Enter Organization Name">  -->
+
+              <mat-form-field >
+                  <mat-select id="org" [(ngModel)]="org" name="org"   >
+                    <mat-option *ngFor="let or of orgn" [value]="or.value"  >
+                      {{ or.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
                 
               </div>
             </div>
@@ -40,7 +48,7 @@
   </div>
 <!--/.row-->
   
-  <div class="row">
+ <!-- <div class="row">
     <div class="col-md-12">
       
 <label class="col-md-3 col-form-label" >Organization Token</label>
@@ -51,6 +59,24 @@
 
   </div>
   
-  <!--/.row-->
+  <!/.row-->
   
+
+<div class="row">
+    <div class="col-md-12">
+
+        <h3>Copy the Token </h3>by clickng the  <strong>Copy</strong> button
+      <br>
+<label class="col-md-3 col-form-label" ><strong>Organization Token</strong></label>
+<br>
+<textarea style="width: 1300px;" #dataContainer></textarea>
+<br>
+<!-- <span class="input-group-btn"> -->
+    <button class="btn btn-default" mat-raised-button color="primary" [class.btn-success]= "isCopied1" type="button" [ngxClipboard]="dataContainer" (cbOnSuccess)="isCopied1 = true">copy</button>
+  <!-- </span> -->
+
+    </div>
+
+
+
 </div>
