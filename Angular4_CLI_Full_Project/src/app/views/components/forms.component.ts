@@ -34,4 +34,11 @@ isCopied1: boolean = false;
 
   };
 
+//   openModal(){
+//     console.log("modalopen");
+// }
+
+
+
+
 }
