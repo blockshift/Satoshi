@@ -12,7 +12,7 @@ export class FormsComponent {
 isCopied1: boolean = false;
 
   orgn = [
-    {value: 'orga', viewValue :'Ned Software Department '},
+    {value: 'orgb', viewValue :'Ned Civil Department '},
     // {value: 'orgb', viewValue :'orgB '},
   ];
 @Input() name: any;
