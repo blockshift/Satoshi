@@ -6,19 +6,19 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <strong>Enroll Degree</strong> Form
+          <strong>Enroll Degree</strong> 
         </div>
         
           <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
             <div class="card-body">
             <div class="form-group row">
               <div class="col-md-6">
-                <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter  UserName">
+                <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter  StudentName">
                
               </div>
 
               <div class="col-md-6">
-                <input type="text" class="form-control" id="university" [(ngModel)]="university" name="university" placeholder="Enter  University">
+                <input type="text" class="form-control" id="fname" [(ngModel)]="university" name="fname" placeholder="Enter Student FatherName ">
                
               </div>
 
@@ -38,14 +38,39 @@
 
 
             <div class="form-group row">
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <input type="text"  class="form-control" id="orgtoken" [(ngModel)]="orgtoken" name="orgtoken" placeholder="Enter Organization token">
+                
+              </div> -->
+
+              <div class="col-md-6">
+                <input type="text"  class="form-control" id="batch" [(ngModel)]="batch" name="batch" placeholder="Add Batch">
                 
               </div>
 
               <div class="col-md-6">
-                <input type="text"  class="form-control" id="field" [(ngModel)]="department" name="department" placeholder="Enter Department">
+                <!-- <input type="text"  class="form-control" id="field" [(ngModel)]="department" name="department" placeholder="Enter Department"> -->
                 
+                <mat-form-field >
+                  <mat-select id="department" [(ngModel)]="department" name="department"   >
+                    <mat-option *ngFor="let dp of depart" [value]="dp.value"  >
+                      {{ dp.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+                </div>
+                <div class="form-group row">
+
+                <div class="col-md-6">
+
+                  <input type="text"  class="form-control" id="year" [(ngModel)]="year" name="year" placeholder="Year of Passing">
+                  
+                </div>
+                
+
+
+
               </div>
 
             </div>
@@ -53,7 +78,7 @@
 
 
           
-        </div>
+        
         <div class="card-footer">
           <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
           <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
@@ -62,9 +87,9 @@
       </div>
       
     </div><!--/.col-->
+  
 
-
-  </div>
+  
 <!--/.row-->
   
   <div class="row">
@@ -90,4 +115,5 @@
 
   <!--/.row-->
   
+</div>
 </div>

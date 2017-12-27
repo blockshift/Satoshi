@@ -7,13 +7,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormsComponent {
 @ViewChild('dataContainer') dataContainer: ElementRef;
-  constructor(private exampleService: AppService) { }
+  constructor(private exampleService: AppService, ) { }
 
 isCopied1: boolean = false;
 
   orgn = [
-    {value: 'orga', viewValue :'Ned Software Department '},
-    // {value: 'orgb', viewValue :'orgB '},
+    {value: 'orga', viewValue :'Software '},
+    {value: 'orga', viewValue :'Civil '},
+    {value: 'orga', viewValue :' Electrical '},
+    {value: 'orga', viewValue :' Mechanical '},
+    {value: 'orga', viewValue :' Degree '},
+    {value: 'orga', viewValue :' Admission '},
+    
   ];
 @Input() name: any;
 @Input() org: any;
@@ -33,5 +38,8 @@ isCopied1: boolean = false;
   	
 
   };
+
+
+
 
 }

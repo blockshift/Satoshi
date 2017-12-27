@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import {  FormsModule,ReactiveFormsModule} from '@angular/forms'; 
 
+
 // Forms Component
 import { FormsComponent } from './forms.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -93,7 +94,8 @@ import {
  MatTabsModule,
  MatToolbarModule,
  MatTooltipModule,
- MatStepperModule
+ MatStepperModule,
+
   ],
   declarations: [
     FormsComponent,
