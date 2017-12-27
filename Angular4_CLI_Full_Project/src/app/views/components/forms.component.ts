@@ -18,6 +18,7 @@ isCopied1: boolean = false;
     {value: 'orga', viewValue :' Mechanical '},
     {value: 'orga', viewValue :' Degree '},
     {value: 'orga', viewValue :' Admission '},
+    {value: 'orga', viewValue :' Examination'}
     
   ];
 @Input() name: any;

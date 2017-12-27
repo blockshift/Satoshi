@@ -24,7 +24,7 @@
               <!--  <input type="text"  class="form-control" id="org" [(ngModel)]="org" name="org" placeholder="Enter Organization Name">  -->
 
               <mat-form-field >
-                  <mat-select id="org" [(ngModel)]="org" name="org"   >
+                  <mat-select id="org" [(ngModel)]="org" name="org"  >
                     <mat-option *ngFor="let or of orgn" [value]="or.value"  >
                       {{ or.viewValue }}
                     </mat-option>

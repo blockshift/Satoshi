@@ -30,16 +30,16 @@ depart  = [
 
 
 @Input() name : any;
-@Input() university : any;
+@Input() fname : any;
 @Input() enrollment : any;
 @Input() cgpa : any;
-@Input() orgtoken : any;
-@Input() department : any;
-
+@Input() batch : any;
+@Input() passingyear : any;
+@Input() department: any;
 onSubmit(form: any):void{
     
     console.log(form);
-  	this.exampleService.enrolldegree(form.name,form.university,form.enrollment,form.cgpa,form.orgtoken,form.department)
+  	this.exampleService.enrolldegree(form.name,form.fname,form.enrollment,form.cgpa,form.batch,form.passingyear,form.department)
   	.subscribe(data => {
                      var testResponse = data["_body"] ;
                      this.dataContainer.nativeElement.innerHTML = data["_body"];

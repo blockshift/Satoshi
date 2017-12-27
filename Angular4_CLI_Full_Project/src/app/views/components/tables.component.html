@@ -18,7 +18,7 @@
               </div>
 
               <div class="col-md-6">
-                <input type="text" class="form-control" id="fname" [(ngModel)]="university" name="fname" placeholder="Enter Student FatherName ">
+                <input type="text" class="form-control" id="fname" [(ngModel)]="fname" name="fname" placeholder="Enter Student FatherName ">
                
               </div>
 
@@ -52,7 +52,7 @@
                 <!-- <input type="text"  class="form-control" id="field" [(ngModel)]="department" name="department" placeholder="Enter Department"> -->
                 
                 <mat-form-field >
-                  <mat-select id="department" [(ngModel)]="department" name="department"   >
+                  <mat-select id="department" [(ngModel)]="department" name="department" placeholder = "Department Name"   >
                     <mat-option *ngFor="let dp of depart" [value]="dp.value"  >
                       {{ dp.viewValue }}
                     </mat-option>
@@ -64,7 +64,7 @@
 
                 <div class="col-md-6">
 
-                  <input type="text"  class="form-control" id="year" [(ngModel)]="year" name="year" placeholder="Year of Passing">
+                  <input type="text"  class="form-control" id="passingyear" [(ngModel)]="passingyear" name="passingyear" placeholder="Year of Passing">
                   
                 </div>
                 
