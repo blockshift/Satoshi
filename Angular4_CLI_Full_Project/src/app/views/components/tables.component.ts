@@ -11,6 +11,23 @@ export class TablesComponent {
   constructor(private exampleService: AppService) { }
 
 
+  
+
+depart  = [
+
+  {value : "Software", viewValue : "Software" },
+  {value : "Electrical", viewValue : "Electical"},
+  {value : "Mechanical", viewValue : "Mechanical"},
+  {value : "Civil", viewValue : "Civil"},
+  {value : "Chemical", viewValue : "Chemical"},
+  {value : "CS&IT", viewValue : "CS&IT"},
+  {value : "Bio-Medical", viewValue : "Bio-Medical"},
+  {value : "CIS", viewValue : "CIS"},
+  {value : "I.M", viewValue : "I.M"},
+  {value : "Petroluem", viewValue : "Petroleum"}
+]
+
+
 @Input() name : any;
 @Input() university : any;
 @Input() enrollment : any;

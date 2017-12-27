@@ -31,7 +31,7 @@ const routes: Routes = [
         path: 'tables',
         component: TablesComponent,
         data: {
-          title: 'Degree Enroll'
+          title: 'Degree Issuance'
         }
       },
        {
