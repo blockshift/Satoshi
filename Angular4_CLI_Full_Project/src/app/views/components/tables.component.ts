@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TablesComponent {
 @ViewChild('dataContainer') dataContainer: ElementRef;
+@ViewChild('dataContainer2') dataContainer2: ElementRef;
   constructor(private exampleService: AppService) { }
 
 
@@ -28,8 +29,14 @@ onSubmit(form: any):void{
                      console.log(data);
                      console.log("I SEE DATA HERE: ", testResponse);
                      
-               //      }
-  		}
+               //      } 
+  		 
+},
+               error => {
+                      console.log("This is sample error");
+                      this.dataContainer.nativeElement.innerHTML ='Invalid Authorization Token'; 
+
+ }
   		); 
 
   };
