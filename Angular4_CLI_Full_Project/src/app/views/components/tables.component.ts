@@ -1,7 +1,7 @@
 
 import { Component , Input , ViewChild,ElementRef } from '@angular/core';
 import { AppService } from '~/./../app/app.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators,FormControl } from '@angular/forms';
 
 @Component({
   templateUrl: 'tables.component.html'
@@ -11,8 +11,12 @@ export class TablesComponent {
 @ViewChild('dataContainer2') dataContainer2: ElementRef;
   constructor(private exampleService: AppService) { }
 
+selectedValue: string;
+ dropdown = new FormControl('', [Validators.required]);
 
-  
+getErrorMessage() {
+    return this.dropdown.hasError('required') ? 'You must enter a value' :'';
+  }
 
 depart  = [
 

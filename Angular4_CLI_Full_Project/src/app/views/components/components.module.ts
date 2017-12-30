@@ -54,6 +54,7 @@ import {
  MatTooltipModule,
  MatStepperModule,
 } from '@angular/material';
+
 @NgModule({
   imports: [
     ComponentsRoutingModule,
@@ -94,7 +95,7 @@ import {
  MatTabsModule,
  MatToolbarModule,
  MatTooltipModule,
- MatStepperModule,
+ MatStepperModule
 
   ],
   declarations: [
@@ -102,7 +103,8 @@ import {
     BlockchainsearchComponent,
     TablesComponent,
     TransactionComponent,
-    EnrollmentComponent
+    EnrollmentComponent,
+   
     
   ]
 })

@@ -9,12 +9,12 @@
           <strong>User Enroll</strong> Form
         </div>
         
-          <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+          <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
             <div class="card-body">
             <div class="form-group row">
               <label class="col-md-3 col-form-label" >Personnel Name  </label>
               <div class="col-md-9">
-                <input type="email" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter Personnelname">
+                <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name" placeholder="Enter Personnelname">
                
               </div>
             </div>
@@ -36,7 +36,7 @@
           
         </div>
         <div class="card-footer">
-          <button type="submit" class="btn btn-sm btn-primary" (click)="pop()" ><i class="fa fa-dot-circle-o"></i> Login </button>
+          <button type="submit" class="btn btn-sm btn-primary"  ><i class="fa fa-dot-circle-o"></i> Login </button>
           <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
         </div>
       </form>

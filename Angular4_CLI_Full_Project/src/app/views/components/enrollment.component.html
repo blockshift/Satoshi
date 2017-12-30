@@ -8,22 +8,22 @@
           <strong>Search By Enrollment Number</strong> 
         </div>
         
-          <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+          <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
             <div class="card-body">
             <div class="form-group row">
               
               <div class="col-md-9">
-                <input type="text" class="form-control" id="enrollmentid" [(ngModel)]="enrollmentid" name="enrollmentid" placeholder="Enter  enrollmentid">
+                <input type="text" class="form-control" id="enrollmentid" [(ngModel)]="enrollmentid" name="enrollmentid" placeholder="Enter  enrollmentid" required >
                
               </div>
             </div>
-            <div class="form-group row">
+         <!--   <div class="form-group row">
             
               <div class="col-md-9">
                 <input type="text"  class="form-control" id="orgtoken" [(ngModel)]="orgtoken" name="orgtoken" placeholder="Enter Organization token">
                 
               </div>
-            </div>
+            </div> -->
           
         </div>
         <div class="card-footer">

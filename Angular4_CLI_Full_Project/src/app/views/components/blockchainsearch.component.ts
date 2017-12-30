@@ -1,6 +1,8 @@
 import { Component , Input , ViewChild,ElementRef } from '@angular/core';
 import { AppService } from '~/./../app/app.service';
 import { FormsModule } from '@angular/forms';
+import {MatDialog} from '@angular/material';
+import { ExampleDialogComponent } from './example-dialog/example-dialog.component';
 
 @Component({
   templateUrl: 'blockchainsearch.component.html'
@@ -16,19 +18,37 @@ export class BlockchainsearchComponent {
 @ViewChild('dataContainer8') dataContainer8: ElementRef;
 @ViewChild('dataContainer9') dataContainer9: ElementRef;
 
-  constructor(private exampleService: AppService) { }
+  constructor(private exampleService: AppService,public dialog: MatDialog) { }
 
 
 @Input() blockNumber: any;
 @Input() orgtoken: any;
 
+
+
+
+
+
+
+
+
+
+
   onSubmit(form: any):void{
     console.log(form.orgtoken);
 
-    this.exampleService.fetchblock(form.blockNumber,form.orgtoken)
+    this.exampleService.fetchblock(form.blockNumber)
   	.subscribe(data => {
+
+
+
+try {
+
   	           console.log('Service',form.blockNumber); 
                     var testRespons = data["_body"];  
+                    
+
+                    
                     var b =  JSON.parse(testRespons); 
                     console.log("decoded Object",b);                  
                     this.dataContainer.nativeElement.innerHTML = b.data.data[0].payload.header.channel_header.tx_id;
@@ -53,10 +73,24 @@ export class BlockchainsearchComponent {
                     this.dataContainer9.nativeElement.innerHTML = b.data.data[0].payload.header.channel_header.timestamp;
                      console.log("I SEE DATA HERE: ",testRespons);
                
-  		}
-  		); 
+  	}
+
+
+catch(e) {
+        let dialogRef = this.dialog.open(ExampleDialogComponent, {
+      height: '100px',
+      width: '900px'
+    });
+    }
+
+
+    	}, (err) => {
+            if (err === 'Unauthorized') { console.log('Unauthorized Error');
+        }
+
+  	}	); 
   	
 
   };
-
 }
+

@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { ExampleDialogComponent } from './views/components/example-dialog/example-dialog.component';
 // Import containers
 import {
   FullLayoutComponent,
@@ -69,6 +71,40 @@ const APP_DIRECTIVES = [
   SIDEBAR_TOGGLE_DIRECTIVES
 ]
 
+import {
+ MatAutocompleteModule,
+ MatButtonModule,
+ MatButtonToggleModule,
+ MatCardModule,
+ MatCheckboxModule,
+ MatChipsModule,
+ MatDatepickerModule,
+ MatDialogModule,
+ MatExpansionModule,
+ MatGridListModule,
+ MatIconModule,
+ MatInputModule,
+ MatListModule,
+ MatMenuModule,
+ MatNativeDateModule,
+ MatPaginatorModule,
+ MatProgressBarModule,
+ MatProgressSpinnerModule,
+ MatRadioModule,
+ MatRippleModule,
+ MatSelectModule,
+ MatSidenavModule,
+ MatSliderModule,
+ MatSlideToggleModule,
+ MatSnackBarModule,
+ MatSortModule,
+ MatTableModule,
+ MatTabsModule,
+ MatToolbarModule,
+ MatTooltipModule,
+ MatStepperModule,
+} from '@angular/material';
+
 // Import routing module
 import { AppRoutingModule } from './app.routing';
 
@@ -90,22 +126,56 @@ import { BsModalModule } from 'ng2-bs3-modal';
     BsModalModule,
     HttpModule,
     RouterModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    MatAutocompleteModule,
+ MatButtonModule,
+ MatButtonToggleModule,
+ MatCardModule,
+ MatCheckboxModule,
+ MatChipsModule,
+ MatDatepickerModule,
+ MatDialogModule,
+ MatExpansionModule,
+ MatGridListModule,
+ MatIconModule,
+ MatInputModule,
+ MatListModule,
+ MatMenuModule,
+ MatNativeDateModule,
+ MatPaginatorModule,
+ MatProgressBarModule,
+ MatProgressSpinnerModule,
+ MatRadioModule,
+ MatRippleModule,
+ MatSelectModule,
+ MatSidenavModule,
+ MatSliderModule,
+ MatSlideToggleModule,
+ MatSnackBarModule,
+ MatSortModule,
+ MatTableModule,
+ MatTabsModule,
+ MatToolbarModule,
+ MatTooltipModule,
+ MatStepperModule
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
+    ExampleDialogComponent
   ],
   providers: [
     APP_PROVIDERS
     
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  entryComponents: [ExampleDialogComponent]
 })
 export class AppModule { 
 constructor(public appState: AppService) {

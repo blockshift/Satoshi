@@ -1,6 +1,8 @@
 import { Component , Input , ViewChild,ElementRef } from '@angular/core';
 import { AppService } from '~/./../app/app.service';
 import { FormsModule } from '@angular/forms';
+import {MatDialog} from '@angular/material';
+import { ExampleDialogComponent } from './example-dialog/example-dialog.component';
 
 @Component({
   templateUrl: 'transaction.component.html'
@@ -15,7 +17,7 @@ export class TransactionComponent {
 @ViewChild('dataContainer8') dataContainer8: ElementRef;
 @ViewChild('dataContainer9') dataContainer9: ElementRef;
 
-  constructor(private exampleService: AppService) { }
+  constructor(private exampleService: AppService,public dialog: MatDialog) { }
 
 
 @Input() transactionid: any;
@@ -24,12 +26,13 @@ export class TransactionComponent {
   onSubmit(form: any):void{
     console.log(form.orgtoken);
 
-    this.exampleService.fetchbytransaction(form.transactionid,form.orgtoken)
+    this.exampleService.fetchbytransaction(form.transactionid)
   	.subscribe(data => {
   	           console.log('Service',form.transactionid); 
                     var testRespons = data["_body"];   
+     try { 
                     var b =  JSON.parse(testRespons);                   
-                    
+                 
                     
                     this.dataContainer3.nativeElement.innerHTML = b.transactionEnvelope.payload.data.actions[0].payload.action.endorsements[0].endorser.Mspid ;
                     
@@ -46,7 +49,21 @@ export class TransactionComponent {
                     this.dataContainer9.nativeElement.innerHTML =  b.transactionEnvelope.payload.header.channel_header.timestamp ; 
                    
                      console.log("I SEE DATA HERE: ",testRespons);
-               
+ 
+
+  }
+
+
+catch(e) {
+        let dialogRef = this.dialog.open(ExampleDialogComponent, {
+      height: '100px',
+      width: '900px'
+    });
+    }
+
+
+
+
   		}
   		); 
   	
