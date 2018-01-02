@@ -52,7 +52,7 @@
                 <!-- <input type="text"  class="form-control" id="field" [(ngModel)]="department" name="department" placeholder="Enter Department"> -->
                 
                 <mat-form-field >
-                  <mat-select id="department" [(ngModel)]="department" name="department"   >
+                  <mat-select id="department" [(ngModel)]="department" name="department" placeholder="Department"  >
                     <mat-option *ngFor="let dp of depart" [value]="dp.value"  >
                       {{ dp.viewValue }}
                     </mat-option>

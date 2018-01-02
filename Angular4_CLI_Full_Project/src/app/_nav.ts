@@ -10,7 +10,7 @@ export const navigation = [
     icon: 'icon-puzzle'
   },
   {
-    name: 'DegreeEnroll',
+    name: 'Degree Issuance',
     url: '/components/tables',
     icon: 'icon-star'
   },
@@ -32,8 +32,7 @@ export const navigation = [
     name: 'Enrollment Search',
     url: '/components/enrollment',
     icon: 'icon-star'
-  }    
-
+  } ,   
     
   
 ];

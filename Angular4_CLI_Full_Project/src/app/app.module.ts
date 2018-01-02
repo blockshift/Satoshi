@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -18,11 +18,14 @@ import {
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
-  SimpleLayoutComponent
+  SimpleLayoutComponent,
+  LoginComponent
 ]
 
 const APP_PROVIDERS = [
-  AppService
+  AuthService,
+  AppService,
+  AuthguardGuard
   
 ];
 
@@ -78,6 +81,10 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ModalModule } from 'ngx-bootstrap';
 import { BsModalModule } from 'ng2-bs3-modal';
+import { AuthService } from 'app/auth.service';
+import { LoginComponent } from 'app/views/components/login.component';
+import { AuthguardGuard } from 'app/authguard.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -93,7 +100,9 @@ import { BsModalModule } from 'ng2-bs3-modal';
     FormsModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    NgbModule.forRoot(),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -108,6 +117,6 @@ import { BsModalModule } from 'ng2-bs3-modal';
   bootstrap: [ AppComponent ]
 })
 export class AppModule { 
-constructor(public appState: AppService) {
+constructor(public appState: AppService , public auth :  AuthService ) {
   }
 }
