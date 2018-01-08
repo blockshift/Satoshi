@@ -32,6 +32,7 @@ export class AppService {
     console.log("body1 logs",body1)
     let body = body1.toString(); 
     console.log('server logs',body);
+
     return this.http.post('http://ec2-34-201-0-4.compute-1.amazonaws.com:4000/users', body, options )
     .map((res: Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));
@@ -63,6 +64,7 @@ enrolldegree(name,fname,enrollment,cgpa,batch,passingyear,department){
                 }
      let body = JSON.stringify(body1);
      console.log('server logs',body1);
+
      return this.http.post('http://ec2-34-201-0-4.compute-1.amazonaws.com:4000/channels/firstchannel/chaincodes/firstchaincode', body1, options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -75,7 +77,9 @@ enrolldegree(name,fname,enrollment,cgpa,batch,passingyear,department){
 let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTgyMTg3MjAsInVzZXJuYW1lIjoiTXVoYW1tYWQgS2FzaGFuIiwib3JnTmFtZSI6Im9yZ2EiLCJpYXQiOjE1MTQ2MTg3MjB9.7m15FdYBpM7QHzUvSgnSRnCRTwxc_OuDYThJO3Q8R5o'});
        let options = new RequestOptions({ headers: headers });
         
+<<<<<<< HEAD
      return this.http.get('http://ec2-34-201-0-4.compute-1.amazonaws.com:4000/channels/firstchannel/blocks/'+blocknumber+'?peer=peer1st-orga.orga', options )
+
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));
 
@@ -88,7 +92,9 @@ console.log("server logs",transactionid);
 let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTgyMTg3MjAsInVzZXJuYW1lIjoiTXVoYW1tYWQgS2FzaGFuIiwib3JnTmFtZSI6Im9yZ2EiLCJpYXQiOjE1MTQ2MTg3MjB9.7m15FdYBpM7QHzUvSgnSRnCRTwxc_OuDYThJO3Q8R5o'});
        let options = new RequestOptions({ headers: headers });
         
+<<<<<<< HEAD
      return this.http.get('http://ec2-34-201-0-4.compute-1.amazonaws.com:4000/channels/firstchannel/transactions/'+transactionid+'?peer=peer1st-orga.orga', options )
+
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));
 
@@ -104,7 +110,9 @@ console.log("server logs",enrollmentid);
 let headers = new Headers({'cache-control':'no-cache', 'Content-Type': 'application/json', 'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTgyMTg3MjAsInVzZXJuYW1lIjoiTXVoYW1tYWQgS2FzaGFuIiwib3JnTmFtZSI6Im9yZ2EiLCJpYXQiOjE1MTQ2MTg3MjB9.7m15FdYBpM7QHzUvSgnSRnCRTwxc_OuDYThJO3Q8R5o'});
        let options = new RequestOptions({ headers: headers });
         
+
      return this.http.get('http://ec2-34-201-0-4.compute-1.amazonaws.com:4000/channels/firstchannel/chaincodes/firstchaincode/?peer=peer1st-orga.orga&fcn=readDegree&args=%5B%22'+enrollmentid+'%22%5D', options )
+
     .map((res: Response) => res)
     .catch(e => {
             if (e.status === 401) {
