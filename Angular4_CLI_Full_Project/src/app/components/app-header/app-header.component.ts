@@ -12,8 +12,8 @@ constructor (private router : Router , private auth : AuthService ){}
 
 logout(){
   console.log("successfully logout");
-       this.auth.getUserLoggedIn();
-   this.router.navigate(['login']); 
+   this.auth.setUserLoggedOut(); 
+      this.router.navigate(['login']);
 }
 
 }

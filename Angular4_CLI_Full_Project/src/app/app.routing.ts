@@ -24,6 +24,7 @@ export const routes: Routes = [
   // },
   {
     path: '',
+    //guarding the components 
     canActivate : [AuthguardGuard], 
     component: FullLayoutComponent,
     data: {

@@ -9,6 +9,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieModule } from 'ngx-cookie';
+ 
 
 // Import containers
 import {
@@ -102,7 +104,8 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     ChartsModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    CookieModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -111,8 +114,8 @@ import { HttpClientModule } from '@angular/common/http';
     ...APP_DIRECTIVES
   ],
   providers: [
-    APP_PROVIDERS
-    
+    APP_PROVIDERS,
+    CookieModule
   ],
   bootstrap: [ AppComponent ]
 })

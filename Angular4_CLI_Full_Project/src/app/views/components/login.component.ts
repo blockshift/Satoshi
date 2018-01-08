@@ -40,15 +40,18 @@ var password = form.pass;
 console.log("password ye hai",this.pass);
        if(this.pass==data[0].password){
        console.log("successfully login");
-       this.auth.setUserLoggedIn();
+     
+       this.auth.setUserLoggedIn(this.username);
    this.router.navigate(['dashboard']); 
   }
        else
        console.log('login fail');
        
 
-      }
-    )
+      },
+      err=> console.log(err)
+
+    );
 
 
   }
