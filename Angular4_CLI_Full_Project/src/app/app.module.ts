@@ -4,11 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieModule } from 'ngx-cookie';
+ 
 
 
 import { ExampleDialogComponent } from './views/components/example-dialog/example-dialog.component';
@@ -20,11 +22,14 @@ import {
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
-  SimpleLayoutComponent
+  SimpleLayoutComponent,
+  LoginComponent
 ]
 
 const APP_PROVIDERS = [
-  AppService
+  AuthService,
+  AppService,
+  AuthguardGuard
   
 ];
 
@@ -114,6 +119,10 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ModalModule } from 'ngx-bootstrap';
 import { BsModalModule } from 'ng2-bs3-modal';
+import { AuthService } from 'app/auth.service';
+import { LoginComponent } from 'app/views/components/login.component';
+import { AuthguardGuard } from 'app/authguard.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -131,6 +140,7 @@ import { BsModalModule } from 'ng2-bs3-modal';
     ReactiveFormsModule,
     NoopAnimationsModule,
     ChartsModule,
+<<<<<<< HEAD
     MatAutocompleteModule,
  MatButtonModule,
  MatButtonToggleModule,
@@ -162,6 +172,11 @@ import { BsModalModule } from 'ng2-bs3-modal';
  MatToolbarModule,
  MatTooltipModule,
  MatStepperModule
+=======
+    NgbModule.forRoot(),
+    HttpClientModule,
+    CookieModule.forRoot()
+>>>>>>> header
   ],
   declarations: [
     AppComponent,
@@ -171,13 +186,13 @@ import { BsModalModule } from 'ng2-bs3-modal';
     ExampleDialogComponent
   ],
   providers: [
-    APP_PROVIDERS
-    
+    APP_PROVIDERS,
+    CookieModule
   ],
   bootstrap: [ AppComponent ],
   entryComponents: [ExampleDialogComponent]
 })
 export class AppModule { 
-constructor(public appState: AppService) {
+constructor(public appState: AppService , public auth :  AuthService ) {
   }
 }

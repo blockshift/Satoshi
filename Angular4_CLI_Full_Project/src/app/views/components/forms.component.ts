@@ -1,4 +1,5 @@
 import { Component , Input , ViewChild,ElementRef } from '@angular/core';
+import {NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppService } from '~/./../app/app.service';
 import { FormsModule } from '@angular/forms';
 
@@ -7,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormsComponent {
 @ViewChild('dataContainer') dataContainer: ElementRef;
-  constructor(private exampleService: AppService, ) { }
+  constructor(private exampleService: AppService, private active: NgbModal  ) { }
 
 isCopied1: boolean = false;
 
@@ -18,20 +19,24 @@ isCopied1: boolean = false;
     {value: 'orga', viewValue :' Mechanical '},
     {value: 'orga', viewValue :' Degree '},
     {value: 'orga', viewValue :' Admission '},
+<<<<<<< HEAD
     {value: 'orga', viewValue :' Examination'}
+=======
+    {value : 'orga', viewValue : 'Examination' }
+>>>>>>> header
     
   ];
 @Input() name: any;
 @Input() org: any;
   onSubmit(form: any):void{
-    console.log(form.name);
+    console.log("djdn",form.name);
 
     this.exampleService.getEnrollmentId(form.name,form.org)
   	.subscribe(data => {
   	           console.log('Service',form.name); 
                     var testRespons = data.token;                     
-                    this.dataContainer.nativeElement.innerHTML = data.token;
-                      
+                    this.dataContainer.nativeElement.innerHTML = "";
+       
                      console.log("I SEE DATA HERE: ",testRespons);
                
   		}
@@ -39,8 +44,8 @@ isCopied1: boolean = false;
   	
 
   };
-
-
-
+  // open(content) : void {
+  //   this.active.open(content, { windowClass: 'dark-modal' });
+  // }
 
 }

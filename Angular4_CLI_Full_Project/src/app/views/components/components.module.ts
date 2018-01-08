@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule }  from '@angular/common';
 import {  FormsModule,ReactiveFormsModule} from '@angular/forms'; 
 
 
+
 // Forms Component
+
 import { FormsComponent } from './forms.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BlockchainsearchComponent } from './blockchainsearch.component';
@@ -54,12 +58,16 @@ import {
  MatTooltipModule,
  MatStepperModule,
 } from '@angular/material';
+<<<<<<< HEAD
 
+=======
+import { LoginComponent } from './login.component';
+>>>>>>> header
 @NgModule({
   imports: [
     ComponentsRoutingModule,
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot(),
+    NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,   
     TabsModule,
@@ -104,7 +112,11 @@ import {
     TablesComponent,
     TransactionComponent,
     EnrollmentComponent,
+<<<<<<< HEAD
    
+=======
+    //LoginComponent
+>>>>>>> header
     
   ]
 })

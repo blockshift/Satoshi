@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthguardGuard } from 'app/authguard.guard';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
   public brandInfo = '#63c2de';
   public brandWarning = '#f8cb00';
   public brandDanger = '#f86c6b';
-
+constructor (private auth : AuthguardGuard ) {}
   // dropdown buttons
   // public status: { isopen } = { isopen: false };
   // public toggleDropdown($event: MouseEvent): void {
