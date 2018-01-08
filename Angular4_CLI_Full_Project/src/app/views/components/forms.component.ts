@@ -31,7 +31,7 @@ isCopied1: boolean = false;
   	.subscribe(data => {
   	           console.log('Service',form.name); 
                     var testRespons = data.token;                     
-                    this.dataContainer.nativeElement.innerHTML = "";
+                    this.dataContainer.nativeElement.innerHTML = data.token;
        
                      console.log("I SEE DATA HERE: ",testRespons);
                
