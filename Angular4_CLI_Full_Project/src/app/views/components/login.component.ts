@@ -31,6 +31,7 @@ var password = form.pass;
   login (){
 
     console.log("naam hai",this.username);
+    //local server created
     this.http.get('http://localhost:3000/login/?name=' + this.username)
   
     .subscribe(
@@ -40,7 +41,7 @@ var password = form.pass;
 console.log("password ye hai",this.pass);
        if(this.pass==data[0].password){
        console.log("successfully login");
-     
+     //throwing the token
        this.auth.setUserLoggedIn(this.username);
    this.router.navigate(['dashboard']); 
   }
