@@ -1,35 +1,26 @@
 export const navigation = [
+  
   {
-    name: 'Dashboard',
-    url: '/dashboard',
-    icon: 'icon-speedometer'
-  },
-  {
-    name: 'User Enroll',
-    url: '/components/forms',
-    icon: 'icon-puzzle'
-  },
-  {
-    name: 'Degree Issuance',
+    name: 'Student ID Issuance',
     url: '/components/tables',
     icon: 'icon-star'
   },
 
   {
-    name: 'Blockchain Search',
+    name: 'Search by block',
     url: '/components/blockchainsearch',
     icon: 'icon-star'
   },
 
   {
-    name: 'Transaction Search',
+    name: 'Search by transaction',
     url: '/components/transaction',
     icon: 'icon-star'
   },
 
 
   {
-    name: 'Enrollment Search',
+    name: 'Search by enrollment',
     url: '/components/enrollment',
     icon: 'icon-star'
   } ,   

@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
-import { FormsComponent } from './forms.component';
+//import { FormsComponent } from './forms.component';
 
 import { TablesComponent } from './tables.component';
 
@@ -22,13 +22,7 @@ const routes: Routes = [
     },
     children: [
       
-      {
-        path: 'forms',
-        component: FormsComponent,
-        data: {
-          title: 'User Enroll'
-        }
-      },
+      
       {
         path: 'tables',
         component: TablesComponent,

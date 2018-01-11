@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <strong>Enroll Degree</strong> 
+          <strong>Student Identity Issuance</strong> 
         </div>
         
           <form class="form-horizontal"  #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
@@ -30,7 +30,7 @@
               </div>
 
               <div class="col-md-6">
-                <input type="text"  class="form-control" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" id="cgpa" [(ngModel)]="cgpa" name="cgpa" placeholder="Enter CGPA" required>
+                <input type="text"  class="form-control"  id="expiry" [(ngModel)]="expiry" name="expiry" placeholder="Enter expiry date of id card" required>
                 
               </div>
 
@@ -38,10 +38,7 @@
 
 
             <div class="form-group row">
-              <!-- <div class="col-md-6">
-                <input type="text"  class="form-control" id="orgtoken" [(ngModel)]="orgtoken" name="orgtoken" placeholder="Enter Organization token">
-                
-              </div> -->
+             
 
               <div class="col-md-6">
                 <input type="text"  class="form-control" id="batch" [(ngModel)]="batch" name="batch" placeholder="Add Batch" required>
@@ -49,14 +46,13 @@
               </div>
 
               <div class="col-md-6">
-                <!-- <input type="text"  class="form-control" id="field" [(ngModel)]="department" name="department" placeholder="Enter Department"> -->
                 
                 <mat-form-field >
-<<<<<<< HEAD
+
                   <mat-select id="department" [(ngModel)]="department" name="department" placeholder = "Department Name" required  >
-=======
-                  <mat-select id="department" [(ngModel)]="department" name="department" placeholder="Department"  >
->>>>>>> header
+
+                  
+
                     <mat-option *ngFor="let dp of depart" [value]="dp.value"  >
                       {{ dp.viewValue }}
                     </mat-option>
@@ -67,12 +63,15 @@
  
                 </mat-form-field>
                 </div>
+
+
                 </div>
+
                 <div class="form-group row">
 
                 <div class="col-md-6">
 
-                  <input type="text"  class="form-control" id="passingyear" [(ngModel)]="passingyear" name="passingyear" placeholder="Year of Passing" required>
+                  <input type="text"  class="form-control" id="studentresidentialaddress" [(ngModel)]="studentresidentialaddress" name="studentresidentialaddress" placeholder="Enter Student residential address" required>
                   
                 </div>
                 
@@ -91,6 +90,7 @@
           <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ng-disabled="f.$invalid"></i> Submit</button>
           <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
         </div>
+
       </form>
       </div>
       

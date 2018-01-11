@@ -23,20 +23,8 @@ export class BlockchainsearchComponent {
 
 @Input() blockNumber: any;
 @Input() orgtoken: any;
-
-
-
-
-
-
-
-
-
-
-
-  onSubmit(form: any):void{
-    console.log(form.orgtoken);
-
+onSubmit(form: any):void{
+    
     this.exampleService.fetchblock(form.blockNumber)
   	.subscribe(data => {
 
@@ -46,9 +34,6 @@ try {
 
   	           console.log('Service',form.blockNumber); 
                     var testRespons = data["_body"];  
-                    
-
-                    
                     var b =  JSON.parse(testRespons); 
                     console.log("decoded Object",b);                  
                     this.dataContainer.nativeElement.innerHTML = b.data.data[0].payload.header.channel_header.tx_id;
