@@ -1,3 +1,4 @@
+
 import { NgModule, ApplicationRef } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +12,41 @@ import { AppService } from './app.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieModule } from 'ngx-cookie';
  
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+ } from '@angular/material';
+
+
 
 // Import containers
 import {
@@ -87,7 +123,8 @@ import { AuthService } from 'app/auth.service';
 import { LoginComponent } from 'app/views/components/login.component';
 import { AuthguardGuard } from 'app/authguard.guard';
 import { HttpClientModule } from '@angular/common/http';
-
+// import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
+import { DataTableModule } from 'angular-4-data-table';
 
 @NgModule({
   imports: [
@@ -105,7 +142,40 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     NgbModule.forRoot(),
     HttpClientModule,
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    MatAutocompleteModule,
+ MatButtonModule,
+ MatButtonToggleModule,
+ MatCardModule,
+ MatCheckboxModule,
+ MatChipsModule,
+ MatDatepickerModule,
+ MatDialogModule,
+ MatExpansionModule,
+ MatGridListModule,
+ MatIconModule,
+ MatInputModule,
+ MatListModule,
+ MatMenuModule,
+ MatNativeDateModule,
+ MatPaginatorModule,
+ MatProgressBarModule,
+ MatProgressSpinnerModule,
+ MatRadioModule,
+ MatRippleModule,
+ MatSelectModule,
+ MatSidenavModule,
+ MatSliderModule,
+ MatSlideToggleModule,
+ MatSnackBarModule,
+ MatSortModule,
+ MatTableModule,
+ MatTabsModule,
+ MatToolbarModule,
+ MatTooltipModule,
+ MatStepperModule,
+ //DataTableModule
+  
   ],
   declarations: [
     AppComponent,

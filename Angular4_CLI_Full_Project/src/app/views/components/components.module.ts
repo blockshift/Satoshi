@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { DataTableModule } from 'angular-4-data-table';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule }  from '@angular/common';
@@ -25,6 +25,7 @@ import { TablesComponent } from './tables.component';
 import { ComponentsRoutingModule } from './components-routing.module';
 
 import { ClipboardModule } from 'ngx-clipboard';
+
 import {
  MatAutocompleteModule,
  MatButtonModule,
@@ -58,7 +59,9 @@ import {
  MatTooltipModule,
  MatStepperModule,
 } from '@angular/material';
+
 import { LoginComponent } from './login.component';
+
 @NgModule({
   imports: [
     ComponentsRoutingModule,
@@ -100,7 +103,7 @@ import { LoginComponent } from './login.component';
  MatToolbarModule,
  MatTooltipModule,
  MatStepperModule,
-
+ //DataTableModule
   ],
   declarations: [
     FormsComponent,

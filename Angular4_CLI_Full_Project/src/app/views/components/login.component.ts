@@ -39,15 +39,17 @@ var password = form.pass;
       (data : any[] ) => {
         
 console.log("password ye hai",this.pass);
-       if(this.pass==data[0].password){
+console.log(data[0].password);
+
+       if(data[0].password==this.pass){
        console.log("successfully login");
      //throwing the token
        this.auth.setUserLoggedIn(this.username);
    this.router.navigate(['dashboard']); 
   }
-       else
+       else {
        console.log('login fail');
-       
+       }
 
       },
       err=> console.log(err)

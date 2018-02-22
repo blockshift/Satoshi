@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <strong>Enroll Degree</strong> 
+          <strong>Enroll Degree by Manual</strong> 
         </div>
         
           <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
@@ -18,7 +18,7 @@
               </div>
 
               <div class="col-md-6">
-                <input type="text" class="form-control" id="fname" [(ngModel)]="university" name="fname" placeholder="Enter Student FatherName ">
+                <input type="text" class="form-control" id="fname" [(ngModel)]="fname" name="fname" placeholder="Enter Student FatherName ">
                
               </div>
 
@@ -68,10 +68,18 @@
                   
                 </div>
                 
+                <div class="col-md-6">
+                    <!-- <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx"> -->
+                <!-- <button type="button" class="btn btn-sm btn-primary" (click)="Upload()"><i class="fa fa-table"></i>Upload</button> -->
+                <!-- <input type="file" (change)="changeListener($event)" #input /> -->
 
+
+                </div>
 
 
               </div>
+
+
 
             </div>
 
@@ -105,5 +113,97 @@
   
   <!--/.row-->
   
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Enroll Degree by Sheet</strong> 
+      </div>
+      <div class="card-body">
+        <div class="container">
+          
+  
+
+     <input type="file" style="display: inline-block;" (change)="onFileChange($event)" placeholder="Upload file" accept=".xlsx">
+     
+     <br>
+<br>
+     <br>
+     <div *ngIf="data && data.length>0 ">
+
+        <table class="result-container" class="table"   >
+          
+          <thead>
+            
+            
+                  <tr>
+                  <th class="result-container" class="text-center" *ngFor="let get of getNames">
+                    {{get}}
+                  </th>
+                </tr>
+                
+          </thead>
+          <tbody>
+          <tr  class="result-container" *ngFor="let row of data; let i = index  ">
+                <td class="text-center" >{{i+1}}</td>
+                <td class="text-center" >{{row.name}}</td>
+                <td class="text-center" >{{row.fname}}</td>
+                <td class="text-center">{{row.enrollment}}</td>
+                <td class="text-center">{{row.cgpa}}</td>
+                <td class="text-center" >{{row.batch}}</td>
+                <td class="text-center">{{row.year}}</td>
+                <td class="text-center">{{row.depart}}</td>
+                
+                <button type="button" (click)="onSelect(row)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          </tr>
+        </tbody>
+
+        <tfoot>
+            <!-- <tr>
+                <td colspan="4">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+            </tr> -->
+        </tfoot>
+
+        </table>
+
+
+<!-- <mat-table *ngFor="let dt of data " >
+
+  <ng-container matColumnDef="username">
+  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+  <mat-cell *matCellDef="let dt"> {{dt.Name}} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Fathername">
+  <mat-header-cell *matHeaderCellDef> FatherName </mat-header-cell>
+  <mat-cell *matCellDef="let dt" > {{dt.Father}} </mat-cell>
+</ng-container>
+
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
+
+</mat-table> -->
+
+
+
+        </div> 
+
+<!-- <div *ngIf="body && body.length>0 "> -->
+        <!-- <div class="well well-lg" >
+         <p>juni</p>
+          Selected Row Data :
+            Name :<strong> </strong>
+            FatherName :<strong</strong>
+        
+      </div> -->
+
+
+	<!-- <button (click)="export()">Export!</button> -->
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
