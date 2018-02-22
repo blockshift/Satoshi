@@ -1,58 +1,17 @@
 
 import { NgModule, ApplicationRef } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieModule } from 'ngx-cookie';
- 
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
- } from '@angular/material';
-
-
-
-// Import containers
-import {
-  FullLayoutComponent,
-  SimpleLayoutComponent
-} from './containers';
+import { ExampleDialogComponent } from './views/components/example-dialog/example-dialog.component';
+import { LoginerrorDialogComponent } from './views/components/loginerror-dialog/loginerror-dialog.component';
+import { FullLayoutComponent,SimpleLayoutComponent } from './containers';
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
@@ -95,7 +54,7 @@ const APP_COMPONENTS = [
   APP_SIDEBAR_NAV
 ]
 
-// Import directives
+
 import {
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
@@ -110,21 +69,21 @@ const APP_DIRECTIVES = [
   SIDEBAR_TOGGLE_DIRECTIVES
 ]
 
-// Import routing module
-import { AppRoutingModule } from './app.routing';
+import {
+ MatCardModule,
+ MatDialogModule
+} from '@angular/material';
 
-// Import 3rd party components
+
+import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ModalModule } from 'ngx-bootstrap';
-import { BsModalModule } from 'ng2-bs3-modal';
 import { AuthService } from 'app/auth.service';
 import { LoginComponent } from 'app/views/components/login.component';
 import { AuthguardGuard } from 'app/authguard.guard';
 import { HttpClientModule } from '@angular/common/http';
-// import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
-import { DataTableModule } from 'angular-4-data-table';
+
 
 @NgModule({
   imports: [
@@ -133,61 +92,35 @@ import { DataTableModule } from 'angular-4-data-table';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ModalModule.forRoot(),
-    BsModalModule,
     HttpModule,
     RouterModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    ChartsModule,
+    MatCardModule,
+    MatDialogModule,
     NgbModule.forRoot(),
     HttpClientModule,
     CookieModule.forRoot(),
-    MatAutocompleteModule,
- MatButtonModule,
- MatButtonToggleModule,
- MatCardModule,
- MatCheckboxModule,
- MatChipsModule,
- MatDatepickerModule,
- MatDialogModule,
- MatExpansionModule,
- MatGridListModule,
- MatIconModule,
- MatInputModule,
- MatListModule,
- MatMenuModule,
- MatNativeDateModule,
- MatPaginatorModule,
- MatProgressBarModule,
- MatProgressSpinnerModule,
- MatRadioModule,
- MatRippleModule,
- MatSelectModule,
- MatSidenavModule,
- MatSliderModule,
- MatSlideToggleModule,
- MatSnackBarModule,
- MatSortModule,
- MatTableModule,
- MatTabsModule,
- MatToolbarModule,
- MatTooltipModule,
- MatStepperModule,
- //DataTableModule
   
+
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
+    ExampleDialogComponent,
+    LoginerrorDialogComponent,
+
   ],
   providers: [
     APP_PROVIDERS,
     CookieModule
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  entryComponents: [ExampleDialogComponent,LoginerrorDialogComponent]
 })
 export class AppModule { 
 constructor(public appState: AppService , public auth :  AuthService ) {

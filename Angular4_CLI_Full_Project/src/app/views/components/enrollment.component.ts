@@ -18,9 +18,9 @@ export class EnrollmentComponent {
 @Input() orgtoken: any;
 
   onSubmit(form: any):void{
-    console.log(form.orgtoken);
+    
 
-    this.exampleService.fetchbyenrollment(form.enrollmentid,form.orgtoken)
+    this.exampleService.fetchbyenrollment(form.enrollmentid)
   	.subscribe(data => {
   	           console.log('Service',form.enrollmentid); 
                     var testRespons = data["_body"];   

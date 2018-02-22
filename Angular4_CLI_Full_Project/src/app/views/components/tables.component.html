@@ -148,10 +148,10 @@
                 <td class="text-center" >{{row.name}}</td>
                 <td class="text-center" >{{row.fname}}</td>
                 <td class="text-center">{{row.enrollment}}</td>
-                <td class="text-center">{{row.cgpa}}</td>
                 <td class="text-center" >{{row.batch}}</td>
-                <td class="text-center">{{row.year}}</td>
-                <td class="text-center">{{row.depart}}</td>
+                <td class="text-center">{{row.expiry}}</td>
+                <td class="text-center">{{row.department}}</td>
+                <td class="text-center">{{row.studentresidentialaddress}}</td>
                 
                 <button type="button" (click)="onSelect(row)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
           </tr>
@@ -205,5 +205,132 @@
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="animated fadeIn">
+  
+  <div class="row">
+    
+    
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Student Identity Issuance</strong> 
+        </div>
+        
+          <form class="form-horizontal"  #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativeValidate>
+            <div class="card-body">
+            <div class="form-group row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Enter  StudentName" required>
+               
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="fname" [(ngModel)]="fname" name="fname" placeholder="Enter Student FatherName" required>
+               
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <input type="text"  class="form-control" id="enrollment" [(ngModel)]="enrollment" name="enrollment" placeholder="Enter Enrollment Number" required>
+                
+              </div>
+
+              <div class="col-md-6">
+                <input type="text"  class="form-control"  id="expiry" [(ngModel)]="expiry" name="expiry" placeholder="Enter expiry date of id card" required>
+                
+              </div>
+
+            </div>
+
+
+            <div class="form-group row">
+             
+
+              <div class="col-md-6">
+                <input type="text"  class="form-control" id="batch" [(ngModel)]="batch" name="batch" placeholder="Add Batch" required>
+                
+              </div>
+
+              <div class="col-md-6">
+                
+                <mat-form-field >
+
+                  <mat-select id="department" [(ngModel)]="department" name="department" placeholder = "Department Name" required  >
+
+                  
+
+                    <mat-option *ngFor="let dp of depart" [value]="dp.value"  >
+                      {{ dp.viewValue }}
+                    </mat-option>
+
+                    
+                  </mat-select>
+
+ 
+                </mat-form-field>
+                </div>
+
+
+                </div>
+
+                <div class="form-group row">
+
+                <div class="col-md-6">
+
+                  <input type="text"  class="form-control" id="studentresidentialaddress" [(ngModel)]="studentresidentialaddress" name="studentresidentialaddress" placeholder="Enter Student residential address" required>
+                  
+                </div>
+                
+
+
+
+              </div>
+
+            </div>
+
+
+
+          
+        
+        <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ng-disabled="f.$invalid"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+
+      </form>
+      </div>
+      
+    </div><!--/.col-->
+  
+
+  
+<!--/.row-->
+  
+  <div class="row">
+    <div class="col-md-12">
+      
+<label class="col-md-12 col-form-label" >Transaction Id</label>
+<div #dataContainer></div>
+
+    </div>
+
+
+  </div>
+  
+<div class="row">
+    <div class="col-md-12">
+      
+<div #dataContainer2></div>
+
+    </div>
+
+
+  </div>
+
+  <!--/.row-->
+  
 </div>
 </div>
