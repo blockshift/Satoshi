@@ -29,5 +29,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrholek/CoreUI-Angular/issues"
+  },
+  "dependencies": {
+    "@angular/cdk": "^5.2.1",
+    "@angular/material": "^5.2.1",
+    "@types/xlsx": "0.0.36"
   }
 }
