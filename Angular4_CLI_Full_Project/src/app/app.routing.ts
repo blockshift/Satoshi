@@ -1,3 +1,4 @@
+import { LandingComponent } from './landing/landing.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FullLayoutComponent} from './containers';
@@ -5,14 +6,19 @@ import { LoginComponent } from 'app/views/components/login.component';
 import { AuthguardGuard } from 'app/authguard.guard';
 export const routes: Routes = [
   {
-   path : 'login',
-   component : LoginComponent,
+   path : 'landing',
+   component : LandingComponent,
   
+ },
+ {
+path : '',
+redirectTo : '/landing',
+pathMatch : 'full'
  },
     {
     path: '',
     //guarding the components 
-    canActivate : [AuthguardGuard], 
+    //canActivate : [AuthguardGuard], 
     component: FullLayoutComponent,
     data: {
       title: 'Home'
@@ -21,7 +27,7 @@ export const routes: Routes = [
       
       {
         path: 'components',
-        canActivate : [AuthguardGuard],
+        //canActivate : [AuthguardGuard],
         loadChildren: './views/components/components.module#ComponentsModule'
       }
       

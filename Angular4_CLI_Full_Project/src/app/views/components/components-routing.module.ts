@@ -14,6 +14,7 @@ import { BlockchainsearchComponent } from './blockchainsearch.component';
 import { EnrollmentComponent } from './enrollment.component';
 
 import { TransactionComponent } from './transaction.component';
+import { RegisterComponent } from './register.component';
 const routes: Routes = [
   {
     path: '',
@@ -53,6 +54,21 @@ const routes: Routes = [
           title: 'Enrollment Search'
         }
 },
+{
+path : 'login',
+component : LoginComponent,
+data : {
+  title : 'Login'
+}
+},
+
+{
+  path : 'register',
+  component : RegisterComponent,
+  data : {
+    title : 'Register'
+  }
+}
 
     ]
   }

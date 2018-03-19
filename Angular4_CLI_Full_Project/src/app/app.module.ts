@@ -16,7 +16,7 @@ import { FullLayoutComponent,SimpleLayoutComponent } from './containers';
 const APP_CONTAINERS = [
   FullLayoutComponent,
   SimpleLayoutComponent,
-  LoginComponent
+  //LoginComponent
 ]
 
 const APP_PROVIDERS = [
@@ -83,6 +83,7 @@ import { AuthService } from 'app/auth.service';
 import { LoginComponent } from 'app/views/components/login.component';
 import { AuthguardGuard } from 'app/authguard.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -113,6 +114,7 @@ import { HttpClientModule } from '@angular/common/http';
     ...APP_DIRECTIVES,
     ExampleDialogComponent,
     LoginerrorDialogComponent,
+    LandingComponent,
 
   ],
   providers: [

@@ -1,7 +1,8 @@
+import { RegisterComponent } from './register.component';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule }  from '@angular/common';
-import {  FormsModule,ReactiveFormsModule} from '@angular/forms'; 
+import { FormsModule,ReactiveFormsModule} from '@angular/forms'; 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BlockchainsearchComponent } from './blockchainsearch.component';
 import { EnrollmentComponent } from './enrollment.component';
@@ -53,7 +54,9 @@ import { LoginComponent } from './login.component';
     BlockchainsearchComponent,
     TablesComponent,
     TransactionComponent,
-    EnrollmentComponent
+    EnrollmentComponent,
+    LoginComponent,
+    RegisterComponent
 
     
 

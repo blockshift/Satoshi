@@ -24,6 +24,16 @@ export const navigation = [
     url: '/components/enrollment',
     icon: 'icon-star'
   } ,   
+  {
+    name : 'Login',
+    url : '/components/login',
+    icon : 'icon-star'
+  },
+  // {
+  //   name : 'Register',
+  //   url : '/components/register',
+  //   icon : 'icon-star'
+  // }
     
   
 ];
